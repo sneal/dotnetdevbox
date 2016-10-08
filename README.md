@@ -5,7 +5,8 @@ Vagrantfile and supporting recipes to create a Windows 2012R2 Server .NET 4.6.1 
 ## Installed Apps
 
 - VisualStudio 2015 Community Edition
-- ReSharper Utlimate 2016
+- ReSharper Ultimate 2016
+- DotPeek 2016
 - Windows Git
 - Notepad++
 - BeyondCompare 4
