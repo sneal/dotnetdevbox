@@ -1,0 +1,1 @@
+{"name":"resharper","version":"2.0.0","description":"Installs/Configures ReSharper","long_description":"","maintainer":"Shawn Neal","maintainer_email":"sneal@sneal.net","license":"Apache 2.0","platforms":{},"dependencies":{"windows":">= 0.0.0"},"recommendations":{},"suggestions":{},"conflicting":{},"providing":{},"replacing":{},"attributes":{},"groupings":{},"recipes":{}}
