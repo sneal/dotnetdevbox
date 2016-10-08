@@ -15,5 +15,6 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "seven_zip"
     chef.add_recipe "git"
     chef.add_recipe "beyondcompare"
+    chef.add_recipe "fiddler"
   end
 end

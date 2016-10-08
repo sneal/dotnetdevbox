@@ -11,6 +11,7 @@ Vagrantfile and supporting recipes to create a Windows 2012R2 Server .NET 4.6.1 
 - Notepad++
 - BeyondCompare 4
 - Google Chrome
+- Fiddler 4
 - 7-Zip
 
 ## Requirements
