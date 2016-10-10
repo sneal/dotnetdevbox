@@ -8,6 +8,7 @@ Vagrantfile and supporting recipes to create a Windows 2012R2 Server .NET 4.6.1 
 - ReSharper Ultimate 2016
 - DotPeek 2016
 - Windows Git
+- Tortoise SVN
 - Notepad++
 - BeyondCompare 4
 - Google Chrome
