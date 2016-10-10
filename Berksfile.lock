@@ -1,5 +1,6 @@
 DEPENDENCIES
   beyondcompare
+  chocolatey-installer
   chrome
   fiddler
   git
@@ -16,6 +17,11 @@ GRAPH
     compat_resource (>= 12.14)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
+  chocolatey (1.0.3)
+    windows (>= 1.38)
+  chocolatey-installer (1.0.0)
+    chocolatey (>= 0.0.0)
+    windows (>= 0.0.0)
   chrome (2.0.0)
     apt (~> 4.0)
     dmg (~> 3.0)
