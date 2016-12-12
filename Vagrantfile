@@ -3,7 +3,8 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "mwrock/Windows2012R2"
-  config.vm.provision "file", source: "~/.gitconfig", destination: "c:/Users/vagrant/.gitconfig"
+  config.vm.provision "shell", inline: "reg ADD HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ /v HideFileExt /t REG_DWORD /d 0 /f"
+  config.vm.provision "shell", inline: "reg ADD HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ /v Hidden /t REG_DWORD /d 1 /f"
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "c:/Users/vagrant/.ssh/id_rsa"
   config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "c:/Users/vagrant/.ssh/id_rsa.pub"
   config.vm.provision "chef_solo" do |chef|
