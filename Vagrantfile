@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
   # Copy over SSH keys
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "c:/Users/vagrant/.ssh/id_rsa"
   config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "c:/Users/vagrant/.ssh/id_rsa.pub"
-  
+
   # Up the RAM to something usable
   config.vm.provider "virtualbox" do |v|
     v.memory = 4096
@@ -32,7 +32,7 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "chocolatey-installer"
     chef.json = {
       "chocolatey-installer" => {
-        "packages" => ["sql-server-management-studio", "nodejs.install", "cloudfoundry-cli"]
+        "packages" => ["sql-server-management-studio", "nodejs.install", "cloudfoundry-cli", "nuget.commandline"]
       },
       "visualstudio" => {
         "install_items" => {
