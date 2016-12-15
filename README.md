@@ -7,8 +7,11 @@ Vagrantfile and supporting recipes to create a Windows 2012R2 Server .NET 4.6.1 
 - VisualStudio 2015 Community Edition
 - ReSharper Ultimate 2016
 - DotPeek 2016
+- SQL Server Express 2014
+- SQL Server Management Studio 2016
+- Cloud Foundry CLI
+- Node.js
 - Windows Git
-- Tortoise SVN
 - Notepad++
 - BeyondCompare 4
 - Google Chrome
