@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "chocolatey-installer"
     chef.json = {
       "chocolatey-installer" => {
-        "packages" => ["mssqlserver2014express", "sql-server-management-studio", "nodejs.install", "cloudfoundry-cli"]
+        "packages" => ["sql-server-management-studio", "nodejs.install", "cloudfoundry-cli"]
       },
       "visualstudio" => {
         "2015" => {
