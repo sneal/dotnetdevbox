@@ -12,6 +12,12 @@ Vagrant.configure(2) do |config|
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "c:/Users/vagrant/.ssh/id_rsa"
   config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "c:/Users/vagrant/.ssh/id_rsa.pub"
   
+  # Up the RAM to something usable
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 4096
+    v.cpus = 2
+  end
+
   # Provision with Chef
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = "./cookbooks"
@@ -29,11 +35,6 @@ Vagrant.configure(2) do |config|
         "packages" => ["sql-server-management-studio", "nodejs.install", "cloudfoundry-cli"]
       },
       "visualstudio" => {
-        "2015" => {
-          "community" => {
-            "default_source" => "http://192.168.1.231:8000"
-          }
-        },
         "install_items" => {
           "NativeLanguageSupport_VCV1" => {
             "selected" => true
