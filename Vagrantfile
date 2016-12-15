@@ -16,7 +16,6 @@ Vagrant.configure(2) do |config|
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = "./cookbooks"
     chef.add_recipe "seven_zip"
-    chef.add_recipe "sql_server::server"
     chef.add_recipe "visualstudio"
     chef.add_recipe "resharper"
     chef.add_recipe "notepadpp"
@@ -27,12 +26,7 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "chocolatey-installer"
     chef.json = {
       "chocolatey-installer" => {
-        "packages" => ["sql-server-management-studio", "nodejs.install", "cloudfoundry-cli"]
-      },
-      "sql_server" => {
-        "version" => "2012",
-        "accept_eula" => true,
-        "server_sa_password" => "Vagrant16"
+        "packages" => ["mssqlserver2014express", "sql-server-management-studio", "nodejs.install", "cloudfoundry-cli"]
       },
       "visualstudio" => {
         "2015" => {
