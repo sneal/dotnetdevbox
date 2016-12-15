@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: "reg ADD HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ /v HideFileExt /t REG_DWORD /d 0 /f"
   config.vm.provision "shell", inline: "reg ADD HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ /v Hidden /t REG_DWORD /d 1 /f"
 
-  # Cop over SSH keys for Git access
+  # Copy over SSH keys
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "c:/Users/vagrant/.ssh/id_rsa"
   config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "c:/Users/vagrant/.ssh/id_rsa.pub"
   
@@ -27,12 +27,30 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "chocolatey-installer"
     chef.json = {
       "chocolatey-installer" => {
-        "packages" => ["tortoisesvn"]
+        "packages" => ["sql-server-management-studio", "nodejs.install", "cloudfoundry-cli"]
       },
       "sql_server" => {
         "version" => "2012",
         "accept_eula" => true,
         "server_sa_password" => "Vagrant16"
+      },
+      "visualstudio" => {
+        "2015" => {
+          "community" => {
+            "default_source" => "http://192.168.1.231:8000"
+          }
+        },
+        "install_items" => {
+          "NativeLanguageSupport_VCV1" => {
+            "selected" => true
+          },
+          "NativeLanguageSupport_MFCV1" => {
+            "selected" => true
+          },
+          "NativeLanguageSupport_XPV1" => {
+            "selected" => true
+          }
+        }
       }
     }
   end
