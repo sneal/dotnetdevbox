@@ -1,0 +1,40 @@
+{
+  "run_list": [
+    "recipe[seven_zip]",
+    "recipe[visualstudio]",
+    "recipe[resharper]",
+    "recipe[notepadpp]",
+    "recipe[chrome]",
+    "recipe[git]",
+    "recipe[beyondcompare]",
+    "recipe[fiddler]",
+    "recipe[chocolatey-installer]"
+  ],
+  "chocolatey-installer": {
+    "packages": [
+      "sql-server-management-studio",
+      "nodejs.install",
+      "cloudfoundry-cli",
+      "nuget.commandline",
+      "powershell-packagemanagement"
+    ]
+  },
+  "visualstudio": {
+    "2015": {
+      "community": {
+        "default_source": "http://192.168.1.84:8000"
+      }
+    },
+    "install_items": {
+      "NativeLanguageSupport_VCV1": {
+        "selected": true
+      },
+      "NativeLanguageSupport_MFCV1": {
+        "selected": true
+      },
+      "NativeLanguageSupport_XPV1": {
+        "selected": true
+      }
+    }
+  }
+}
