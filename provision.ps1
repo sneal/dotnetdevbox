@@ -2,6 +2,9 @@
 # Supports provisioning inside and outside Vagrant
 #
 
+# Support PowerShell < v3 which doesn't have $PSScriptRoot defined
+if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
+
 # Returns true if the current session is running under an Administrator
 function Test-Admin {
   $currentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent())
